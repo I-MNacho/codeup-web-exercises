@@ -35,26 +35,26 @@
 // If price for a movie per day is $3, how much will you have to pay?
 
 // var rentalPerDayDollars = 3;
-// var littleMermaidDays = prompt("How many days are you renting The Littel Mermaid?");
+// var littleMermaidDays = prompt("How many days are you renting The Little Mermaid?");
 // var brotherBearDays = prompt("How many days are you renting Brother Bear?");
 // var herculesDays = prompt("How many days are you renting Hercules?");
 // var totalRentalCost = (littleMermaidDays * 3) + (brotherBearDays * 3) + (herculesDays * 3);
-// totalRentalCost = alert("Your tota will be $" +
+// totalRentalCost = alert("Your total will be $" +
 //     (parseInt(littleMermaidDays)
 //         + parseInt(brotherBearDays)
 //         + parseInt(herculesDays))
 //     * parseInt(rentalPerDayDollars));
 
 
-var googlePaysPerHour = prompt("What does Google pay per hr?");
-var amazonPayPerHour = prompt("What does Amazon pay per hr?");
-var facebookPayPerHour = prompt("What does Facebook pay per hr?");
-var googleHoursWorked = prompt("How many hours did you work for Google?");
-var amazonHoursWorked = prompt("How many hours did you work for Amazon?");
-var facebookHoursWorked = prompt("How many hours did you work for Facebook?");
+var googlePaysPerHour = parseFloat(prompt("What does Google pay per hr?"));
+var amazonPayPerHour = parseFloat(prompt("What does Amazon pay per hr?"));
+var facebookPayPerHour = parseFloat(prompt("What does Facebook pay per hr?"));
+var googleHoursWorked = parseFloat(prompt("How many hours did you work for Google?"));
+var amazonHoursWorked = parseFloat(prompt("How many hours did you work for Amazon?"));
+var facebookHoursWorked = parseFloat(prompt("How many hours did you work for Facebook?"));
 
 var totalGooglePay = (googlePaysPerHour * googleHoursWorked);
 var totalAmazonPay = (amazonPayPerHour * amazonHoursWorked);
 var totalFaceBookPay = (facebookPayPerHour * facebookHoursWorked);
 
-var totalPayForWeek = alert ("Your total pay this week is " + (totalGooglePay + totalAmazonPay + totalFaceBookPay));
+var totalPayForWeek = alert ("Your total pay this week is $" + (totalGooglePay + totalAmazonPay + totalFaceBookPay));
