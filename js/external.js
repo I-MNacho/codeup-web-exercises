@@ -57,4 +57,4 @@ var totalGooglePay = (googlePaysPerHour * googleHoursWorked);
 var totalAmazonPay = (amazonPayPerHour * amazonHoursWorked);
 var totalFaceBookPay = (facebookPayPerHour * facebookHoursWorked);
 
-var totalPayForWeek = alert(totalGooglePay + totalAmazonPay + totalFaceBookPay);
+var totalPayForWeek = alert ("Your total pay this week is " + (totalGooglePay + totalAmazonPay + totalFaceBookPay));
