@@ -208,18 +208,18 @@ function addNums(num1, num2){
 
   // var keyword creates "Function Scope" variables
 
-  // var globalVar = "Look, I'm Global!"; // declare a global variable
-  //
-  // function scopeExample() {
-  //     var localVar = "Look, I'm Local!"; // declare a local variable
-  //     alert(localVar); // localVar is accessible here
-  //     alert(globalVar); // globalVar is accessible here
-  //     globalVar = "What now?";
-  // }
-  //
-  // scopeExample();
-  // alert(globalVar);
-  // alert(localVar);
+  var globalVar = "Look, I'm Global!"; // declare a global variable
+
+  function scopeExample() {
+      var localVar = "Look, I'm Local!"; // declare a local variable
+      alert(localVar); // localVar is accessible here
+      alert(globalVar); // globalVar is accessible here
+      globalVar = "What now?";
+  }
+
+  scopeExample();
+  alert(globalVar);
+  alert(localVar);
 
 
   // EXTRA SCOPE EXAMPLE
@@ -288,6 +288,12 @@ function addNums(num1, num2){
 
   // See additional example
 
+  (function() {
+
+
+  })();
 </script>
 </body>
 </html>
+
+
