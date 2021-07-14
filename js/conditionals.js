@@ -59,12 +59,12 @@
 // }
 // console.log(randomColor)
 
-/**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
+// /**
+//  * TODO:
+//  * Prompt the user for a color when the page loads, and pass the input from the
+//  * user to your `analyzeColor` function. Alert the return value from your
+//  * function to show it to the user.
+//  */
 // var userColorPick = prompt('Enter a color here')
 // alert (analyzeColor((userColorPick)) + userColorPick);
 
@@ -96,7 +96,7 @@
 //         return (totalAmount - totalAmount)
 //     }
 // }
-
+//
 // Example:
 // console.log(calculateTotal(0, 100)); // returns 100
 // console.log(calculateTotal(1, 100)); // returns 10
@@ -104,7 +104,7 @@
 // console.log(calculateTotal(3, 100)); // returns 35
 // console.log(calculateTotal(4, 100)); // returns 50
 // console.log(calculateTotal(5, 100)); // returns 0
-//
+
 // Test your function by passing it various values and checking for the expected
 // return value.
 
@@ -114,7 +114,7 @@
 //  * Prompt the user for their total bill, then use your `calculateTotal` function
 //  * and alerts to display to the user what their lucky number was, what their
 //  * price before the discount was, and what their price after the discount is.
-//
+
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
 // var whatsYourTotalBill = prompt('Enter your total bill.');
@@ -126,13 +126,21 @@
 //  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
 //  * would like to enter a number. If they click 'Ok', prompt the user for a
 //  * number, then use 3 separate alerts to tell the user:
-
-var doYouWant = confirm('Would you like to enter a number?');
-var userInputNumber = prompt('Enter a number here');
+//
 
 
-alert(userInputNumgber % 2 === 0);
-alert(parseFloat(userInputNumber) + 100);
+
+function newAsk() {
+    var doYouWant = confirm('Would you like to enter a number?');
+    var userInputNumber = prompt('Enter a number here');
+    if (userInputNumber % 2 === 0) {
+        alert('Your number is even')
+    } else if (userInputNumber % 2 === 1) {
+        alert('Your number is odd')
+    }
+}
+newAsk();
+// else if alert('Your number is' + parseFloat(userInputNumber) + 100);
 
 //  * - whether the number is even or odd
 //  * - what the number plus 100 is
