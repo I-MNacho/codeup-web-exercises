@@ -14,6 +14,7 @@ do {
     alert('We have ' + totalConesLeft + ' cones left to sell.');
 
 }
-while (totalConesLeft > howManyCones){
+while (totalConesLeft >= 1){
     alert('We are all out of cones, Sorry!')
+
 };
