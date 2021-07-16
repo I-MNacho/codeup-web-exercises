@@ -81,21 +81,21 @@
 // Write a function named `calculateTotal` that accepts a lucky number and total
 // amount, and returns the discounted price.
 
-// function calculateTotal(luckyNum, totalAmount){
-//     if (luckyNum === 0){
-//         return (totalAmount)
-//     } else if (luckyNum === 1){
-//         return (totalAmount * .10)
-//     } else if (luckyNum === 2){
-//         return (totalAmount * .25)
-//     } else if(luckyNum === 3){
-//         return (totalAmount * .35)
-//     } else if (luckyNum === 4){
-//     return (totalAmount * .50)
-//     } else if (luckyNum === 5){
-//         return (totalAmount - totalAmount)
-//     }
-// }
+function calculateTotal(luckyNum, totalAmount){
+    if (luckyNum === 0){
+        return (totalAmount)
+    } else if (luckyNum === 1){
+        return (totalAmount * .10)
+    } else if (luckyNum === 2){
+        return (totalAmount * .25)
+    } else if(luckyNum === 3){
+        return (totalAmount * .35)
+    } else if (luckyNum === 4){
+    return (totalAmount * .50)
+    } else if (luckyNum === 5){
+        return (totalAmount - totalAmount)
+    }
+}
 //
 // Example:
 // console.log(calculateTotal(0, 100)); // returns 100
