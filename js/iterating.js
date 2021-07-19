@@ -57,7 +57,9 @@
  console.log(secondItem(names))
     //  * - last: returns the last item in the array
         function lastItem(names){
-            return names[3];
+            return names[names.length - 1] ;
+
+                // [3];   <--- commented out to see if the .length - 1 works
         }
  console.log(lastItem(names))
     //  *
