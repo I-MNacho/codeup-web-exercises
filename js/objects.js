@@ -76,30 +76,82 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /**
-     * TODO:
-     * Loop through the books array and output the following information about
-     * each book:
-     * - the book number (use the index of the book in the array)
-     * - the book title
-     * - author's full name (first name + last name)
-     *
-     * Example Console Output:
-     *
-     *      Book # 1
-     *      Title: The Salmon of Doubt
-     *      Author: Douglas Adams
-     *      ---
-     *      Book # 2
-     *      Title: Walkaway
-     *      Author: Cory Doctorow
-     *      ---
-     *      Book # 3
-     *      Title: A Brief History of Time
-     *      Author: Stephen Hawking
-     *      ---
-     *      ...
-     */
+    var books = [
+        {
+            title: "The Art of War",
+            author: {
+                firstName: "Sun",
+                lastName: "Tzu"
+                    }
+        },
+        {
+            title: "The Cask of Amontillado",
+            author: {
+                firstName: "Edgar Allan",
+                lastName: "Poe"
+                    }
+        },
+        {
+            title: "Harry Potter and The Order of The Phoenix",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+                    }
+        },
+        {
+            title: "Fight Club",
+            author: {
+                firstName: "Chuck",
+                lastName: "Palahniuk"
+                    }
+        },
+        {
+            title: "American Psycho",
+            author: {
+                firstName: "Bret",
+                lastName: "Ellis"
+                    }
+        }
+
+    ];
+console.log(books[0].title) // "The Salmon of Doubt"
+console.log(books[0].author.firstName) // "Douglas"
+console.log(books[0].author.lastName) // "Adams"
+
+
+
+
+
+    // /**
+    //  * TODO:
+    //  * Loop through the books array and output the following information about
+    //  * each book:
+    //  * - the book number (use the index of the book in the array)
+    //  * - the book title
+    //  * - author's full name (first name + last name)
+    //  * Example Console Output:
+    //  *
+    //  *      Book # 1
+    //  *      Title: The Salmon of Doubt
+    //  *      Author: Douglas Adams
+    //  *      ---
+    //  *      Book # 2
+    //  *      Title: Walkaway
+    //  *      Author: Cory Doctorow
+    //  *      ---
+    //  *      Book # 3
+    //  *      Title: A Brief History of Time
+    //  *      Author: Stephen Hawking
+    //  *      ---
+    //  *      ...
+    //  */
+        books.forEach(function (book, index){
+            console.log((index + 1 ) + " " + book.title , book.author.firstName + " " , book.author.lastName)
+        })
+
+
+
+
 
     /**
      * Bonus:
