@@ -167,15 +167,22 @@ console.log(books[0].author.lastName) // "Adams"
             this.firstName = fName;
             this.lastName = lName;
     }
-    var newBook = new createBook('If it Bleeds', 'Stephen', 'King');
+    var newBook = new createBook(' If it Bleeds', ' Stephen', 'King');
             console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
 
 
 
-        function showBookInfo (books){
-            return ' ' + books.title + '\n ' +  books.author.firstName + ' ' + books.author.lastName ;
+        function showBookInfo (addNewBooks){
+            return ' ' + addNewBooks.title + '\n ' +  addNewBooks.author.firstName + ' ' + addNewBooks.author.lastName ;
         }
 
+            //
+            // for (var i = books.length - 1; i >= 0; i++ )
+            //     console.log(books[i]);
+
+//             books.forEach(function (book, index){
+//             console.log(' ' + 'Book # ' + (index + 1 ) + "\n " + book.title + '\n' , book.author.firstName , book.author.lastName)
+// })
 
 
 
