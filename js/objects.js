@@ -11,13 +11,13 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    //     var person = {
-    //         firstName: 'Ignacio',
-    //         lastName: 'Mares'
-    // }
-    // console.log(person)
-    // console.log(person.firstName) // "Rick"
-    // console.log(person.lastName) // "Sanchez"
+        var person = {
+            firstName: 'Ignacio',
+            lastName: 'Mares'
+    }
+    console.log(person)
+    console.log(person.firstName) // "Rick"
+    console.log(person.lastName) // "Sanchez"
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -27,10 +27,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    //     person.sayHello = function (){
-    //         return 'Hello from ' + person.firstName + ' ' + person.lastName;
-    // }
-    // console.log(person.sayHello());
+        person.sayHello = function (){
+            return 'Hello from ' + person.firstName + ' ' + person.lastName;
+    }
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -146,11 +146,8 @@ console.log(books[0].author.lastName) // "Adams"
     //  *      ...
     //  */
         books.forEach(function (book, index){
-            console.log((index + 1 ) + " " + book.title , book.author.firstName + " " , book.author.lastName)
+            console.log(' ' + 'Book # ' + (index + 1 ) + "\n " + book.title + '\n' , book.author.firstName , book.author.lastName)
         })
-
-
-
 
 
     /**
@@ -164,4 +161,27 @@ console.log(books[0].author.lastName) // "Adams"
      *   `showBookInfo` function.
      */
 
+
+        function createBook(title, fName, lName){
+            this.title = title;
+            this.firstName = fName;
+            this.lastName = lName;
+    }
+    var newBook = new createBook('If it Bleeds', 'Stephen', 'King');
+            console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
+
+
+
+        function showBookInfo (books){
+            return ' ' + books.title + '\n ' +  books.author.firstName + ' ' + books.author.lastName ;
+        }
+
+
+
+
+console.log(showBookInfo(books[0]));
+console.log(showBookInfo(books[1]));
+console.log(showBookInfo(books[2]));
+console.log(showBookInfo(books[3]));
+console.log(showBookInfo(books[4]));
 // })();
