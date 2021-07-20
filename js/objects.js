@@ -176,15 +176,10 @@ console.log(books[0].author.lastName) // "Adams"
             return ' ' + addNewBooks.title + '\n ' +  addNewBooks.author.firstName + ' ' + addNewBooks.author.lastName ;
         }
 
-            //
-            // for (var i = books.length - 1; i >= 0; i++ )
-            //     console.log(books[i]);
-
-//             books.forEach(function (book, index){
-//             console.log(' ' + 'Book # ' + (index + 1 ) + "\n " + book.title + '\n' , book.author.firstName , book.author.lastName)
-// })
-
-
+                books.forEach(
+                    showBookInfo
+                )
+console.log(books)
 
 console.log(showBookInfo(books[0]));
 console.log(showBookInfo(books[1]));
