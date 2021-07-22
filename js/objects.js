@@ -11,13 +11,13 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-        var person = {
-            firstName: 'Ignacio',
-            lastName: 'Mares'
-    }
-    console.log(person)
-    console.log(person.firstName) // "Rick"
-    console.log(person.lastName) // "Sanchez"
+    //     var person = {
+    //         firstName: 'Ignacio',
+    //         lastName: 'Mares'
+    // }
+    // console.log(person)
+    // console.log(person.firstName) // "Rick"
+    // console.log(person.lastName) // "Sanchez"
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -27,10 +27,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-        person.sayHello = function (){
-            return 'Hello from ' + person.firstName + ' ' + person.lastName;
-    }
-    console.log(person.sayHello());
+    //     person.sayHello = function (){
+    //         return 'Hello from ' + person.firstName + ' ' + person.lastName;
+    // }
+    // console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -54,12 +54,32 @@
         {name: 'George', amount: 320}
     ];
 
-    shoppers.forEach(function(shopper, amount){
-        if (shopper.amount <= 200) console.log(shopper.name + ' only spent $' + shopper.amount);
-        else{
-            console.log(shopper.name + ' spent ' + shopper.amount +' so ' + shopper.name + ' gets a discount of 12%, ' + shopper.name + ' new total is ' + (shopper.amount - shopper.amount * .12))
-        }
-        })
+
+
+// for (var i = 0; i < shoppers.length; i += 1) {
+//     var discountedAmount = calculateDiscount(shoppers[i].amount, discountThreshold, discountPercentage);
+//     var output = shoppers[i].name + ' is purchasing ' + shoppers[i].amount +
+//         ' of stuff. He will get ' + discountedAmount +
+//         ' off the purchase and pay ' +
+//         (shoppers[i].amount - discountedAmount) + '.';
+//     console.log(output);
+// }
+//
+//         shoppers.forEach(function (shopper, amount){
+//             if (shopper.amount < 200) console.log(shopper.name + ' is purchasing ' + shopper.amount + ' of stuff. He will get ' + discountedAmount + ' off the purchase and pay ' + (shopper.amount - discountedAmount) + '.');
+//
+//
+//         })
+
+
+
+    //
+    // shoppers.forEach(function(shopper, amount){
+    //     if (shopper.amount <= 200) console.log(shopper.name + ' only spent $' + shopper.amount + ' so you get no discount.');
+    //     else{
+    //         console.log(shopper.name + ' spent ' + shopper.amount +' so ' + shopper.name + 'gets a discount of 12%, ' + shopper.name + ' new total is ' + (shopper.amount -            shopper.amount * .12))
+    //     }
+    //     })
 
 
 
@@ -114,9 +134,9 @@
         }
 
     ];
-console.log(books[0].title) // "The Salmon of Doubt"
-console.log(books[0].author.firstName) // "Douglas"
-console.log(books[0].author.lastName) // "Adams"
+// console.log(books[0].title) // "The Salmon of Doubt"
+// console.log(books[0].author.firstName) // "Douglas"
+// console.log(books[0].author.lastName) // "Adams"
 
 
 
@@ -168,7 +188,7 @@ console.log(books[0].author.lastName) // "Adams"
             this.lastName = lName;
     }
     var newBook = new createBook(' If it Bleeds', ' Stephen', 'King');
-            console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
+            // console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
 
 
 
@@ -179,11 +199,14 @@ console.log(books[0].author.lastName) // "Adams"
                 books.forEach(
                     showBookInfo
                 )
-console.log(books)
+
 
 console.log(showBookInfo(books[0]));
 console.log(showBookInfo(books[1]));
 console.log(showBookInfo(books[2]));
 console.log(showBookInfo(books[3]));
 console.log(showBookInfo(books[4]));
+
+console.log(books)
+
 // })();
