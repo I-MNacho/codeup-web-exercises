@@ -1,11 +1,9 @@
 'use strict'
 
-prompt("Enter an odd number between 1 and 50");
 
+var numberToStopAt = prompt("Enter an odd number between 1 and 50");
 
-for (var i = 1; i < 100; i++) {
-
-    console.log('Loop counter is: ' + i);
+for (var i = 1; i < 50; i + 3 ) {
 
     if (i === numberToStopAt) {
         console.log('We have reached the stopping point: break!');

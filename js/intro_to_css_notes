@@ -1,0 +1,98 @@
+========================Intro to CSS =======================
+
+Inline style element         <---- not really used 
+<h1 style="color: deeppink"> Intro to Css </h1>
+---------------------------------------------------
+
+
+<head>
+<title> Into to CSS </title>
+
+<style>
+	h1 { 
+	color: black; 
+	text-align: center;
+	font-size: xxx-large // or // 300px;
+	margin
+	padding
+	border
+	}
+
+</style>
+</head>
+<body>
+
+</body>
+
+
+====================  Classes in HTML   ========================================
+<h2 class="dark-orange"> Classes in Html</h2>
+--------------------------------------------------------------------------------------
+
+
+
+
+================= CSS Stylesheet  ==============================================
+
+*** Class selector ***
+.dark-orange {   		//    .	<--- the dot operator selects the "class"
+	color: darkorange;
+}
+--------------------------------------------------------------------------------------
+
+*** ID selector ***
+#							<--- selects the "id" tags
+--------------------------------------------------------------------------------------
+
+*** h2 selector ***
+h2 {						<--- selects all the h2 elements
+	font-family: sans-serif;
+
+}
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
