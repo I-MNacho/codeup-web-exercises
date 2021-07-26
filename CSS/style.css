@@ -1,38 +1,50 @@
 h1 {
     text-align: center;
+    color: black;
 }
 
 h2 {
-    color: orangered;
-    text-decoration: underline yellow;
+    color: greenyellow;
+    text-decoration: underline black;
+
 }
 
 /** {*/
 /*    background-color: lightblue;*/
 /*}*/
-body{
-    background-image: url('../img/white_flowy_background.jpeg');
-    background-repeat: repeat;
-    opacity: 0.5;
+.hero{
+    position: page;
+    height: auto;
+    width: 100%
+}
+
+.hero:after {
+    content: " ";
+    background-image: url('../img/city_gif.gif');
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    opacity: 1;
     top: 0;
-    left: 0;
+    left: 0 ;
     bottom: 0;
     right: 0;
-    position: absolute;
+    position: fixed;
     z-index: -1;
 }
 
-
+ul:
 ul{
-    list-style-type: square ;
+    list-style-type: square;
 }
 
 body {
     font-family: "Apple Chancery";
+    font-size: 25px;
+    color: black;
 }
 
 table, th, td {
-    border: 3px solid black;
+    border: 3px solid yellow;
 
 }
 
@@ -46,4 +58,9 @@ a:hover{
 
 a:link{
     color: orange;
+}
+
+h1:hover{
+    color: greenyellow;
+    font-size: 40px;
 }
