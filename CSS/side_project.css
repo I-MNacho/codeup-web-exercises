@@ -1,0 +1,118 @@
+/*html,*/
+/*body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    font-weight: 100;*/
+/*}*/
+
+/*.border {*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    background: #eae144;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.title {*/
+/*    font-size: 3rem;*/
+/*    margin: 0;*/
+/*    padding-top: .5rem;*/
+/*    color: orange;*/
+/*}*/
+
+/*canvas {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    border-radius: 50px;*/
+/*}*/
+
+/*.message-info{*/
+/*    width: 100%;*/
+/*    border: 1px solid grey;*/
+/*    border-radius: 5px;*/
+/*    color: #403e93;*/
+/*    background: #d0defc;*/
+/*    padding: 8px;*/
+/*    margin: 8px;*/
+/*}*/
+/*.message-success{*/
+/*    width: 100%;*/
+/*    border: 1px solid grey;*/
+/*    border-radius: 5px;*/
+/*    color: #3e784c ;*/
+/*    background: #d6f2dc ;*/
+/*    padding: 8px;*/
+/*    margin: 8px;*/
+/*}*/
+
+/*.message-warning{*/
+/*    width: 100%;*/
+/*    border: 1px solid grey;*/
+/*    border-radius: 5px;*/
+/*    color: #97883a;*/
+/*    background: #fcface ;*/
+/*    padding: 8px;*/
+/*    margin: 8px;*/
+/*}*/
+/*.message-error{*/
+/*    width: 100%;*/
+/*    border: 1px solid grey;*/
+/*    border-radius: 5px;*/
+/*    color: #863748;*/
+/*    background: #f4d4d7;*/
+/*    padding: 8px;*/
+/*    margin: 8px;*/
+/*}*/
+
+/*:root {*/
+/*    --width: 50px;*/
+/*    --x-speed: 14s;*/
+/*    --y-speed: 7s;*/
+/*    --transition-speed: 2.2s;*/
+/*}*/
+
+/*.el {*/
+/*    width: 50%;*/
+/*    height: 50%;*/
+/*}*/
+
+/*.x {*/
+/*    animation: x var(--x-speed) linear infinite alternate;*/
+/*}*/
+/*.y {*/
+/*    animation: y var(--y-speed) linear infinite alternate;*/
+/*}*/
+
+/*@keyframes x {*/
+/*    100% {*/
+/*        transform: translateX(calc(100vw));*/
+/*    }*/
+/*}*/
+/*@keyframes y {*/
+/*    100% {*/
+/*        transform: translateY(calc(100vh));*/
+/*    }*/
+/*}*/
+
+/*.x {*/
+/*    width: 60px;*/
+/*    height: 60px;*/
+/*    background-color: lightgreen;*/
+/*}*/
+
+/*.moved {*/
+/*    width: 50px;*/
+/*    --x-speed: 14s;*/
+/*    --y-speed: 7s;*/
+/*    --transition-speed: 2.2s;*/
+/*    transform: translateX(10vw);*/
+/*    background-color: aquamarine;*/
+/*    color:black;*/
+/*    padding: 10px;*/
+/*    border: 2px solid black;*/
+/*    margin: 5px;*/
+/*    !*width: border-box ;*!*/
+
+/*}*/
