@@ -1,0 +1,48 @@
+.flexbox, .flex-item {
+ border: 1px solid black;
+ margin: 5px;
+ padding: 5px;
+}
+
+.flexbox {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: stretch;
+ align-items: flex-start;
+ align-content: center;
+ flex-grow: 1;
+ /*height: 900px;*/
+}
+
+ /* justify-content controls how flex items in a flex line */ /*flex-flow: row;*/         /*are distributed along the main axis*/
+
+ /* wrap allows your items to wrap with page change */
+                    /* wrap-reverse wraps items up and keeps first item bottom left*/
+
+/* main axis is the flex direction, flex direction is direction the box is going in */
+
+/* justify-content: space-around  <--- symmetrical   */
+
+/* justify-content: space-evenly  <--- spaces around evenly  */
+
+/* align-items: controls how flex items are distributed along the container cross-axis */
+
+/*align-items: stretch <--- stretches up and down the size of container to fit everything*/
+
+/*align-items: start <--- keeps it in its own container size*/
+
+/*align-items: baseline <--- aligns to first line of text across all texts*/
+
+/* align-content: controls how extra corss-axis is distributed between and around flex lines. applies only to multi-line containers. Has no effect on nowrap or single-line containers. */
+
+/* flex-grow:  define if a flex item can grow when there is available space, and how much it grows is proportional to its siblings and edges.... meaning a box can stretch and fill the rest of the page if the space is there. */
+
+
+/*   someclass.{
+     order: 1;
+     }
+ */
+
+
+/* order can alter the order of the items on a case-by-case basis. by default every item has order 0. source order is the order you see in the html file. any items that have the same order number is located in source order or html order. */
