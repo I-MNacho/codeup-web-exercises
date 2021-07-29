@@ -1,17 +1,17 @@
-.flexbox, .flex-item {
- border: 1px solid black;
- margin: 5px;
- padding: 5px;
-}
+/*.flexbox, .flex-item {*/
+/* border: 1px solid black;*/
+/* margin: 5px;*/
+/* padding: 5px;*/
+/*}*/
 
-.flexbox {
- display: flex;
- flex-direction: row;
- flex-wrap: wrap;
- justify-content: stretch;
- align-items: flex-start;
- align-content: center;
- flex-grow: 1;
+/*.flexbox {*/
+/* display: flex;*/
+/* flex-direction: row;*/
+/* flex-wrap: wrap;*/
+/* justify-content: stretch;*/
+/* align-items: flex-start;*/
+/* align-content: center;*/
+/* flex-grow: 1;*/
  /*height: 900px;*/
 }
 
@@ -46,3 +46,69 @@
 
 
 /* order can alter the order of the items on a case-by-case basis. by default every item has order 0. source order is the order you see in the html file. any items that have the same order number is located in source order or html order. */
+
+
+
+/* Using flex for nav elements */
+/*====================================================================================*/
+
+
+
+
+div {
+ display: flex;
+ /* You can create horizontal and vertical centering with justify-content and align-items: center*/
+ /*justify-content: center;*/
+ /*align-items: center;*/
+ border: 2px solid gold;
+ margin: 10px;
+ padding: 10px;
+ height: 150px;
+}
+
+div a {
+ display: block;
+ text-align: center;
+ width: 75px;
+ /*margin auto inside a flex container will also create vertical and horizontal centering */
+ margin: auto;
+}
+
+nav, div, a {
+ padding: 10px;
+ margin: 10px;
+}
+
+nav, div {
+ display: flex;
+}
+
+nav, a {
+ border: 1px solid gray;
+}
+
+nav {
+ justify-content: center;
+}
+
+/* Horizontal and vertical centering */
+
+div {
+ /* You can create horizontal and vertical centering with justify-content and align-items: center*/
+ /*justify-content: center;*/
+ /*align-items: center;*/
+ border: 2px solid gold;
+ height: 150px;
+}
+
+div a {
+ display: block;
+ text-align: center;
+ width: 75px;
+ /*margin auto inside a flex container will also create vertical and horizontal centering */
+ margin: auto;
+}
+
+/*display: flex*/
+/*margin: auto.  <---- will center the item, while under a display flex*/
+/*:nth-of-type(2)   <--- !* selects down to the specific child  *!*/
