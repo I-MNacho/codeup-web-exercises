@@ -1,40 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Array Warm Up</title>
-</head>
-<body>
-​
-<script>
-  "use strict";
-  function concatFirstAndLast(input1, input2, input3){
-    for (let i in input1) return input1[i];
-    for (let i in input3) return input3[i];
-    for (let i in input1, input2, input3);
-  }
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Array Warm Up</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--​-->
+<!--<script>-->
+<!--  "use strict";-->
+  // function concatFirstAndLast(input1, input2, input3){
+  //   for (let i in input1) return input1[i];
+  //   for (let i in input3) return input3[i];
+  //   for (let i in input1, input2, input3);
+  // }
+  //
+  // console.log(concatFirstAndLast());
 
-  console.log(concatFirstAndLast());
 
 
-
-// ​
+//
   /*
       // TODO: Create a function below, concatFirstAndLast, that takes in an array and returns the first and last inputs
       //  concatentated together if both elements are strings. If either the first or last element does is not a string
       //  or if the array contains one or fewer elements, return false.
-​
+
       Example input/output...
-​
+
       concatFirstAndLast(['a', 'b', 'c']) // 'ac'
       concatFirstAndLast([]) // false
       concatFirstAndLast(['23', '12', 'hello']) // '23hello'
       concatFirstAndLast([true]) // false
       concatFirstAndLast([true, 'bob']) // false
-​
+
    */
   // ​
-</script>
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
 ​
+<script>
+  "use strict";
+
+
+      //
+      // Create a function, createNames, that takes in an array of first names and array of second names.
+      // The function should return an array of name objects with firstName and lastName properties with the input array values.
+      // Assume both input arrays are not empty, the same length and only contain name strings.
+
+      var firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
+      var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
+
+      createNames(firstNames, lastNames) // returns...
+
+        // [
+        //   {
+        //     firstName: 'CJ',
+        //     lastName: 'Cat'
+        //   },
+        //   {
+        //     firstName: 'Max',
+        //     lastName: 'Feline'
+        //   },
+        //   {
+        //     firstName: 'Claude',
+        //     lastName: 'Kitten'
+        //   },
+        //   {
+        //     firstName: 'Meowmeow',
+        //     lastName: 'Calico'
+        //   }
+        // ]
+function createNames(fNames, lNames){
+        var names = [];
+        // for (var i = 0 ; i < fNames.length; i += 1){
+        //   names.push({
+        //     firstNames: fNames[i],
+        //     lasName: lNames[i]
+        //   });
+        // }
+        fNames.forEach(function (name, index, array){
+          names.push({
+            firstName: name,
+            lastName: lNames[index]
+          })
+        })
+
+        return names;
+}
+
+
+</script>
+
 </body>
 </html>
