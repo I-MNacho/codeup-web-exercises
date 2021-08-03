@@ -1,0 +1,7 @@
+header{
+ background-image: url('pizza-link.png');
+}
+header h1 {
+ opacity: .7;
+ font-weight: 400;
+}
