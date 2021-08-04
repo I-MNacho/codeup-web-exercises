@@ -80,12 +80,12 @@
         // ]
 function createNames(fNames, lNames){
         var names = [];
-        // for (var i = 0 ; i < fNames.length; i += 1){
-        //   names.push({
-        //     firstNames: fNames[i],
-        //     lasName: lNames[i]
-        //   });
-        // }
+        for (var i = 0 ; i < fNames.length; i += 1){
+          names.push({
+            firstNames: fNames[i],
+            lasName: lNames[i]
+          });
+        }
         fNames.forEach(function (name, index, array){
           names.push({
             firstName: name,
