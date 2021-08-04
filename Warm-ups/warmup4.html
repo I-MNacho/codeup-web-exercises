@@ -15,15 +15,34 @@
    //   An empty array argument will return false.
    //
    //   Examples...
+  //
+  // function allAs(arr) {
+  //   for (var i = 0; i < arr.length; i++) {
+  //     if (arr[i] === 'a' || arr[i] === 'A')
+  //       return false
+  //   }else{
+  //     return true
+  //   }
+  // }
 
   function allAs(arr){
-
+    if (arr.length === 0){
+      return false;
+    }
+    //look at each element in the array and if a non-'a' is found, return false
+    for(var i = 0; i < arr.length; i++){
+      if(arr[i] !== 'a' && arr[i] !== 'A') {
+        return false;
+      }
+    }
+    return true;          // have to give it a chance to exit loop
   }
 
-     console.log(allAs(['b', 'a', 'A', 'c'])) // false
-     console.log(allAs(['c', 'a', 'b', 'A'])) // false
-     console.log(allAs(['a', 'A', 'a', 'a'])) // true
-     console.log(allAs([])) // false
+
+     // console.log(allAs(['b', 'a', 'A', 'c'])) // false
+     // console.log(allAs(['c', 'a', 'b', 'A'])) // false
+     // console.log(allAs(['a', 'A', 'a', 'a'])) // true
+     // console.log(allAs([]))                   // false
 
 
    // TODO: 2. Create a function, all2s, that takes in an array of numbers and returns true
@@ -32,10 +51,23 @@
    //
    //   Examples...
 
-     // all2s([2, 4, 1, 9]) // false
-     // all2s([2, 2, 2, 2, 2]) // true
-     // all2s([2]) // true
-     // all2s([]) // false
+  function all2s(arr){
+    if (arr.length === 0){
+          return false;
+        }
+        //look at each element in the array and if a non-'a' is found, return false
+        for(var i = 0; i < arr.length; i++){
+          if(arr[i] !== 2) {
+            return false;
+          }
+        }
+        return true;          // have to give it a chance to exit loop
+      }
+
+  console.log(all2s([2, 4, 1, 9])); // false
+  console.log(all2s([2, 2, 2, 2, 2])); // true
+  console.log(all2s([2])); // true
+  console.log(all2s([])); // false
 
 
 
@@ -47,28 +79,33 @@
    //  'numbers' array are 2s. Assume that the 'letters' array will only contain valid letters
    //  and the 'numbers' array will only contain valid numbers. If one or both arrays are empty,
    //  the function should return false.
-   //
+
+    function objectHasAllAsAnd2s(obj){
+      return allAs(obj.letters) && all2s(obj.numbers)
+    }
+
+
    //  Examples
    //
-   //  objectHasAllAsAnd2s({
-   //    letters: ['a', 'A', 'a', 'A'],
-   //    numbers: [2, 2, 2, 2, 2, 2]
-   //  }); // returns true;
-   //
-   //  objectHasAllAsAnd2s({
-   //    letters: ['a', 'A', 'b, 'A'],
-   //    numbers: [2, 2, 2, 2, 2, 2]
-   //  }) // returns false;
-   //
-   //  objectHasAllAsAnd2s({
-   //    letters: ['a', 'A', 'a', 'A'],
-   //    numbers: []
-   //  }); // returns false;
-   //
-   //  objectHasAllAsAnd2s({
-   //    letters: ['a'],
-   //    numbers: [2]
-   //  }); // returns true;
+    console.log(objectHasAllAsAnd2s({
+      letters: ['a', 'A', 'a', 'A'],
+      numbers: [2, 2, 2, 2, 2, 2]
+    })); // returns true;
+
+    console.log(objectHasAllAsAnd2s({
+      letters: ['a', 'A', 'b', 'A'],
+      numbers: [2, 2, 2, 2, 2, 2]
+    })); // returns false;
+
+    console.log(objectHasAllAsAnd2s({
+      letters: ['a', 'A', 'a', 'A'],
+      numbers: []
+    })); // returns false;
+
+    console.log(objectHasAllAsAnd2s({
+      letters: ['a'],
+      numbers: [2]
+    })); // returns true;
 
 
 </script>
