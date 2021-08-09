@@ -1,0 +1,266 @@
+============== BOM & DOM ===============
+
+in intelliJ, 
+<script> 
+
+window
+
+</script>
+
+anyting declared in global space is included and or attached to window
+
+so
+var instructorName = 'Douglas'
+
+console.log(window.instructorName)
+&
+console.log(instructorName)
+
+both will output = 'Douglas'
+------------------------------------------------------
+
+alert() = message on page
+
+confirm() = returns boolean value
+
+prompt() = 
+
+-------------------------------------------------------
+setInterval()
+
+var consoleLogInterval = 1000;
+var consolelogIntervalCount = 0;
+
+setInterval(function () {
+		console.log('Howdy, Yall + consoleLogIntervalCount');
+		consolelogIntervalCount++;
+}, consoleLogInterval);
+
+
+setInterval (Funciton (){}, {} )
+--------------------------------------------------------
+inline interval value
+
+setInterval(function (){
+	console.log('inlined interval time')
+}, 1000);
+
+
+
+var areWeThereYetInterval = 1000;
+var areWeThereYetCount = 0;
+var areWeThereYetMaxCount = 10;
+
+funciton sayAreWeThereYet(){
+	console.log('Are we there yet? For the ' + areWeThereYetCount + 'time!');
+	areWeThereYetCount;
+	if(areWeThereYetCount >= areWeThereYetMaxCount){
+	console.log('For the last time, no! Please Stop!')
+	clearInterval(intervalId);
+	}
+}
+var intervalId = setInterval(sayAreWeThereYet, areWeThereYetInterval);
+console.log(intervalId);
+
+setInterval(sayAreWeThereYet, areWeThereYetInterval);
+
+
+--------------------------------------------------------
+
+var delay = 5000;
+
+var timeoutId = setTimeout(funciton(){
+	confirm('Click ok to claim your $50 gas card!');
+}, delay)
+
+
+This will cancel the timeout.
+clearTimeout(timeoutId)
+
+
+-------------------------------------------------------
+location = moves your page to a new webpage
+
+
+
+setTimeout(function(){
+	location = 'http://google.com'
+}, 2000)
+
+
+-------------------------------------------------------
+location reload
+
+setTimeout(function(){
+	console.log('reloading......')
+	locaiton.reload();
+}, 3000)
+
+
+
+=======================================================
+
+.document = ?? 
+
+=======================================================
+
+get element by id:
+
+var header = document.getElementById('main-title');
+
+console.log(header);
+
+-------------------------------------------------------
+
+get elemnets by class:
+
+var cards = document.getElementByClassName('card');
+console.log(cards);
+
+var firstCard = cards[0];     //<--- get element by console.log(firstCard)		 //array notation [ i ]
+
+console.log(firstCard.innerHTML); <--- gets content of
+
+-------------------------------------------------------
+
+var cardsArr = Array.from(cards);
+console.log(cardsArr);
+
+mapFn - map funciton to call on every element of the array 
+
+-------------------------------------------------------
+
+document.getElementByTagName('section') <--- allows 									//you to pull 								      // all elements with 								    //a specific tag
+
+var secitons = document.getElementsByTagName('section')
+console.log(sections);
+
+
+
+
+
+
+-------------------------------------------------------
+
+get elements with document.querySelector
+
+
+var headingElement = document.querySelector('header h1');
+console.log(headingElement);
+
+or, another example:
+
+var headingElement = document.querySelector('#main-title');
+
+
+
+document.forms[0].feedback.value      // <-- directly get 										  //input on form
+
+
+-------------------------------------------------------
+
+var title = document.getElementById('main-title');
+console.log(title);
+
+console.log(title.innerHTML);   <--- both inner text with html
+console.log(title.innerText);   <--- just the text
+
+title.innerHTML = "<em> Hello, Draco!</em>"  //<-- replaced 											//title with what 	displays Hello, Draco!			 //we put in as alert											// live view
+
+
+
+
+title.innerText = "<em> Hello, Draco!</em>"   
+
+		displays " <em> Hello, Draco!</em>" 
+
+
+
+innerHTML: the HTML tags will NOT get displayed 
+
+innerText: the HTML tags WILL get displayed
+
+
+-------------------------------------------------------
+
+var cowboyElement = document.querySelector('#cowboy');
+console.log()
+
+console.log(cowboyElement.hasAttribute('data-1' aka any 'string' thats an element ) <--returns boolean  								//but accepts a string
+
+-------------------------------------------------------
+get value of attribute 
+
+console.log(cowboyElement.getAttribute('data-1') 
+
+^--returns value of input in the string space, value means the actual text of it
+
+
+-------------------------------------------------------
+
+Setting the value of an attribute
+
+cowboyElement.setAttribute('data-1', 'hello');
+
+(element to be changed, new value)
+
+-------------------------------------------------------
+add attribute
+
+cowboyElement.setAttribute('data-test', 'Draco');
+
+-------------------------------------------------------
+remove attribute
+
+cowboyElement.removeAttribute('data-test');
+
+-------------------------------------------------------
+
+Changing style 
+
+var jumbotron = document.querySelector('.jumbotron');
+console.log(jumbotron);
+
+jumbotron.style.backgroundColor = 'red';
+
+
+jumbotron.style.display = 'none';  <-- makes it go away
+
+
+jumbotron.style.['font-family'] = 'times';
+same as
+jumbotron.style.fontFamily = 'times';
+
+-------------------------------------------------------
+
+styling a node list
+
+var tableRows = document.getElementsByTagName('tr')
+console.log(tableRows);
+
+for (var i = 0; i < tableRows.length; i++){
+	tableRows[i].style.background = 'red';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
