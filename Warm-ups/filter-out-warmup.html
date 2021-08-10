@@ -8,21 +8,21 @@
 <script>
     // Create a function, filterOutBobUsers, that takes in an array of user objects with firstName and lastName properties and returns an array of user objects without any Bob users. The case of the Bob names does not matter.
 
-    function filterOutBobUsers(users) {
-        //output array
-        var outputUsers = [];
-        //looping over the users if the given users first name is bob, dont add to the output array
-        for (var i = 0; i < users.length; i++){
-            // console.log(users[i].firstName);
-            if (users[i].firstName.toLowerCase() !== 'bob'){
-                outputUsers.push(users[i]);
-            }
-            }
-            // return the output array
-        return outputUsers;
-    }
+    // function filterOutBobUsers(users) {
+    //     //output array
+    //     var outputUsers = [];
+    //     //looping over the users if the given users first name is bob, dont add to the output array
+    //     for (var i = 0; i < users.length; i++){
+    //         // console.log(users[i].firstName);
+    //         if (users[i].firstName.toLowerCase() !== 'bob'){
+    //             outputUsers.push(users[i]);
+    //         }
+    //         }
+    //         // return the output array
+    //     return outputUsers;
+    // }
 
-    console.log(filterOutBobUsers(users));
+    // console.log(filterOutBobUsers(users));
 
     var users = [
         {
@@ -48,19 +48,19 @@
     ]
 //this allows me to use any name by using the filterName property
 
-    function filterOutBobUsers(users, filterName) {
-        //output array
-        var outputUsers = [];
-        //looping over the users if the given users first name is bob, dont add to the output array
-        for (var i = 0; i < users.length; i++){
-            // console.log(users[i].firstName);
-            if (users[i].firstName.toLowerCase() !== filterName){
-                outputUsers.push(users[i]);
-            }
-        }
-        // return the output array
-        return outputUsers;
-    }
+    // function filterOutBobUsers(users, filterName) {
+    //     //output array
+    //     var outputUsers = [];
+    //     //looping over the users if the given users first name is bob, dont add to the output array
+    //     for (var i = 0; i < users.length; i++){
+    //         // console.log(users[i].firstName);
+    //         if (users[i].firstName.toLowerCase() !== filterName){
+    //             outputUsers.push(users[i]);
+    //         }
+    //     }
+    //     // return the output array
+    //     return outputUsers;
+    // }
 
 
 </script>
