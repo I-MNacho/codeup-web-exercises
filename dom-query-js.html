@@ -7,6 +7,11 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<h2>Hello from Codeup!!!!! </h2>
+<button id="test-btn">Test Button</button>
+<button id="test-btn2">Test Button</button>
+<button id="test-btn3">Test Button</button>
+<button id="test-btn4">Test Button</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -23,6 +28,9 @@
     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid atque, culpa dolor ea est et excepturi exercitationem facilis mollitia nemo nisi omnis pariatur, placeat quam quidem repellat vel veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolores eos, error esse eveniet impedit maiores numquam qui reprehenderit tempora ullam vitae? Molestias perferendis, reiciendis! Consequatur cupiditate eius expedita veritatis.
 </p>
 
 
@@ -69,6 +77,40 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerText = "Mission Accomplished"
+
+
+
+        var testBtn = document.getElementById('test-btn')
+
+        testBtn.addEventListener('click', function (){
+            document.getElementsByTagName('body')[0].style.backgroundColor = 'purple'
+        });
+
+
+        var testBtn2 = document.getElementById('test-btn2')
+
+        testBtn2.addEventListener('click', function (){
+            document.getElementsByTagName('p')[0].style.color = 'white'
+        });
+
+        var testBtn3 = document.getElementById('test-btn3')
+
+        testBtn3.addEventListener('click', function (){
+            document.getElementsByTagName('p')[1].style.color = 'yellow'
+        });
+
+        var testBtn4 = document.getElementById('test-btn4')
+
+        testBtn4.addEventListener('click', function (){
+            document.getElementsByTagName('h2')[0].style.color = 'green'
+        });
+
+
+
+
+
+
+
     })();
 </script>
 </body>
