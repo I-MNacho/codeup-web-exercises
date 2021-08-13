@@ -188,7 +188,7 @@
             this.lastName = lName;
     }
     var newBook = new createBook(' If it Bleeds', ' Stephen', 'King');
-            // console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
+            console.log(newBook.title + '\n' + newBook.firstName + ' ' + newBook.lastName);
 
 
 
@@ -201,12 +201,12 @@
                 )
 
 
-console.log(showBookInfo(books[0]));
-console.log(showBookInfo(books[1]));
-console.log(showBookInfo(books[2]));
-console.log(showBookInfo(books[3]));
-console.log(showBookInfo(books[4]));
+// console.log(showBookInfo(books[0]));
+// console.log(showBookInfo(books[1]));
+// console.log(showBookInfo(books[2]));
+// console.log(showBookInfo(books[3]));
+// console.log(showBookInfo(books[4]));
 
-console.log(books)
+// console.log(books)
 
 // })();

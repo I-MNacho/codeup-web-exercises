@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercise</title>
+</head>
+<body>
+
+
+<!--jQuery script tag-->
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
+</script>
+<!--jQuery script tag-->
+
+
+<h1 class="h1-header" id="hello-h1">Hello From Draco</h1>
+
+<p class="codeup" id="paragraph-first">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam, dolorem error et fuga, fugiat fugit id nihil nisi pariatur porro quam quasi suscipit temporibus ut. Adipisci doloremque itaque molestias? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio dolorum ducimus minus ratione voluptatem. Aperiam assumenda beatae consequuntur eaque eum iusto nulla omnis reiciendis similique? Ducimus fugiat iusto vero.
+</p>
+<p class="p-second" id="paragraph-second">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis illum quae soluta. Accusantium distinctio dolorum fugiat laudantium molestias nisi, officia sapiente sequi similique soluta vitae voluptatibus? Dolorem, eum labore?
+</p>
+
+<ul class="codeup" id="unordered-first">
+  <li class="first-li" id="first-li-item">
+    Dog
+  </li>
+  <li class="second-li" id="second-li-item">
+    Cat
+  </li>
+  <li class="third-li" id="third-li-item">
+    Duck
+  </li>
+</ul>
+
+<div class="first-div" id="first-div-item">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, voluptas.
+</div>
+
+<div class="second-div" id="second-div-item">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eligendi neque nulla quisquam repellat similique! Cupiditate distinctio illum perferendis vero.
+</div>
+
+<div class="third-div" id="third-div-item">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi maxime nisi non odit quam quis repellendus sequi? Aliquid corporis exercitationem laborum minima odio ratione sapiente velit. Deleniti laudantium sed unde!
+</div>
+
+<script>
+
+//============================ ID SELECTORS ================================
+
+// 3. Use jQuery to select an element by the id. Alert the contents of the element.
+//                     var firstAlert = $('#hello-h1');
+//                     alert(firstAlert.text());
+
+//4. Update the jQuery code to select and alert a different id.
+//                 var secondAlert = $('#paragraph-first');
+//                 alert(secondAlert.text());
+
+// 5. Use the same id on 2 elements. How does this change the jQuery selection?
+//    This only displayed the first #id in alert
+// 6. Remove the duplicate id. Each id should be unique on that page.
+
+//============================ CLASS SELECTORS ================================
+
+//1. Remove your custom jQuery code from previous exercises.
+//2. Update your code so that at least 3 different elements have the same class named codeup.
+//3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+// $('.codeup').css('border', '1px red solid')
+      // OR
+    // $('.codeup').css({
+    //   'border': "1px solid red"
+    //   // 'background': 'blue'
+    // });
+
+// 4. Remove the class from one of the elements. Refresh and test that the border has been removed.
+// 5.Give another element an id of codeup. Does this element get a border now?
+// YES
+
+
+// ========================= Element SELECTORS ================================
+// 1. Remove your custom jQuery code from previous exercises.
+// 2. Using jQuery, set the font-size of all li elements to 20px.
+
+//                     $('li').css('font-size', '20px')
+
+// 3. Craft selectors that highlight all the h1, p, and li elements.
+// 4. Create a jQuery statement to alert the contents of your h1 element(s).
+
+//                   var alertMyH1 = $('h1');
+//                   alert((alertMyH1.text()))
+
+
+// ========================= Multiple Selectors================================
+//1. Combine your selectors that highlight all the h1, p, and li elements.
+
+var myH1PLi = $('h1, p, li')
+
+
+
+
+</script>
+</body>
+</html>
