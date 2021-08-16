@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Warmups</title>
+</head>
+<body>
+<h1 id="goodMorning">Good Morning, Draco!</h1>
+<button id="afternoon">It's afternoon</button>
+<button id="notAfterNoon">It's late pal</button>
+<script>
+    // This was the solution Javier gave on walk Thru
+    var afternoonButton = document.getElementById('afternoon');
+    var header = document.getElementById('goodMorning');
+    var changeHeader = function (){
+        header.innerHTML = "Good Afternoon, Draco!"
+    }
+
+
+
+
+
+
+    // This was the solution I came up with and it also works
+
+    var testBtn = document.getElementById('afternoon')
+    testBtn.addEventListener('click', function (){
+        document.getElementById('goodMorning').innerText = 'Good Afternoon Draco'
+    });
+
+
+</script>
+</body>
+</html>
