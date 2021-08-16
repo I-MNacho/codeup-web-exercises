@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Methods</title>
+</head>
+<body>
+<h1> Essesntial jQuery Methods</h1>
+<h2 id="leader">I am the Leader</h2>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque explicabo fugit magni officiis porro, quas qui quod reprehenderit tenetur. Adipisci aliquid, animi asperiores esse natus nemo nostrum quasi repellat saepe?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, assumenda at cum dolore, doloremque dolorum eum expedita harum ipsa nihil odio quae quam quia quis reiciendis sint tenetur veniam, voluptates!
+</p>
+<h2 id="follower"> I am the Follower</h2>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at cupiditate distinctio omnis veniam vero. Autem dolorum, facere facilis ipsa iure maiores maxime, mollitia perferendis quis ratione recusandae rerum veritatis!
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi commodi id illo illum ipsa iste, maiores neque nihil pariatur porro praesentium quae quaerat qui quis, quod, ratione ullam ut.
+</p>
+<button id="font-changer"> Change the font </button>
+<script src="js/jQuery-v3.6.0.js"></script>
+<script>
+
+  $('#font-changer').click(function (){
+     var currentFontFamily = $('body').css('font-family');
+     // alert(currentFontFamily);
+     if (currentFontFamily === 'serif' || currentFontFamily === 'Times'){
+       $('body').css('font-family', 'sans-serif');
+     }else{
+       $('body').css('font-family', 'serif')
+     }
+});
+
+  // $('h2').mouseenter(function (){
+  //   $(this).addClass('highlight');
+  // })
+  // $('h2').mouseleave(function (){
+  //   $(this).removeClass('highlight');
+  // });
+
+  $('h2').hover(function (){
+    $(this).toggleClass('highlight')
+  });
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

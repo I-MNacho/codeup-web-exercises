@@ -1,0 +1,12 @@
+.invisible{
+ visibility: hidden;
+}
+.dt-headings{
+background-color: yellow;
+ color: #863748;
+ max-width: max-content;
+}
+
+.dd{
+ color: blueviolet;
+}
