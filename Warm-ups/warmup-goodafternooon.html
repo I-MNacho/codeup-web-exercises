@@ -15,6 +15,16 @@
     <p id="message"></p>
 </section>
 <button id="reset">Reset</button>
+
+<section>
+    <input type="text" id="wordToDisplay">
+    <button id="displayWord">Display in DOM</button>
+    <p id="word"></p>
+</section>
+<section>
+    <button id="create-an-element">Create an Element</button>
+</section>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
@@ -54,14 +64,21 @@
 //         $("#message").html("");
 //     });
 // ===============================================================
+//This is my solution for the third warmup. in this warm up we added lines 19-26, we needed to add functionality to a text box and it should display in the dom.
+//.val() gets the value of a input on a text-box
 
-
-
-
-
+   $('#displayWord').on('click', function (){
+       var word = $('#wordToDisplay').val(); //<-- has to be in handler if not it wont                                              //      update when the new text is input
+       $('#word').html(word);
+       // $("#word").html($("#wordToDisplay").val()); //<-- one line solution
+   });
+    //BONUS
+$("#create-an-element").on('click', function (){
+    $(this).after('<p>I am New</p>');
+});
 
 // ===============================================================
-    // This was the solution Javier gave on walk Thru on first warmup walkthru
+    // This was the solution Javier gave on walk Thru on first warmup walk-thru
     // var afternoonButton = document.getElementById('afternoon');
     // var header = document.getElementById('goodMorning');
     // var changeHeader = function (){
