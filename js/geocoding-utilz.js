@@ -51,3 +51,14 @@ function reverseGeocode(coordinates, token) {
             return data.features[0].place_name;
         });
 }
+
+
+
+
+mapboxgl.accessToken = MAP_API_TOKEN
+var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v9', // style URL
+    center: [-115.1398, 36.1699], // starting position [lng, lat]
+    zoom: 11 // starting zoom
+});

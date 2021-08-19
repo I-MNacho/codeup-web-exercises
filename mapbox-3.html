@@ -19,6 +19,7 @@
 </style>
 
 <div id="map"></div>
+<div class="map-code">
 
 <script>
 
@@ -40,16 +41,32 @@
             }).then(function(data) {
               return data.features[0].center;
             });
+  };
+
+  function reverseGeocode(coordinates, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+              return res.json();
+            })
+            // to get all the data from the request, comment out the following three lines...
+            .then(function(data) {
+              return data.features[0].place_name;
+            });
   }
+
   var accessToken = MAP_API_TOKEN
   setTimeout(function (){
     geocode('Whitefish, montana', accessToken).then(function (result){
-      map.setZoom(11);
+      map.setZoom(13);
       map.setCenter(result)
     });
   }, 5000);
 
 
+
 </script>
+</div>
 </body>
 </html>
