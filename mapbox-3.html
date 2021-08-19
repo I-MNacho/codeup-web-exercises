@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapbox 3</title>
+
+  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+
+  <script src="js/keys.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'> </script>
+</head>
+<body>
+
+<style>
+  #map {
+    width: 800px;
+    height: 800px;
+  }
+</style>
+
+<div id="map"></div>
+
+<script>
+
+  mapboxgl.accessToken = MAP_API_TOKEN
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v9', // style URL
+    center: [-98.4936 , 29.4241], // starting position [lng, lat]
+    zoom: 11 // starting zoom
+  });
+
+
+  function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+              return res.json();
+            }).then(function(data) {
+              return data.features[0].center;
+            });
+  }
+  var accessToken = MAP_API_TOKEN
+  setTimeout(function (){
+    geocode('Whitefish, montana', accessToken).then(function (result){
+      map.setZoom(11);
+      map.setCenter(result)
+    });
+  }, 5000);
+
+
+</script>
+</body>
+</html>
