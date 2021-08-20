@@ -13,6 +13,9 @@
  *  })
  *
  */
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+
+
 function geocode(search, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
@@ -55,10 +58,10 @@ function reverseGeocode(coordinates, token) {
 
 
 
-mapboxgl.accessToken = MAP_API_TOKEN
-var map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v9', // style URL
-    center: [-115.1398, 36.1699], // starting position [lng, lat]
-    zoom: 11 // starting zoom
-});
+// mapboxgl.accessToken = MAP_API_TOKEN
+// var map = new mapboxgl.Map({
+//     container: 'map', // container ID
+//     style: 'mapbox://styles/mapbox/streets-v9', // style URL
+//     center: [-115.1398, 36.1699], // starting position [lng, lat]
+//     zoom: 11 // starting zoom
+// });
