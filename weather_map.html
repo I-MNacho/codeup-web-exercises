@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'> </script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+
+
+<style>
+  #map {
+    width: 600px;
+    height: 600px;
+  }
+</style>
+<div id="map"></div>
+
+<script>
+  "use strict"
+  mapboxgl.accessToken = MAP_API_TOKEN
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v9', // style URL
+    center: [-98.4916, 29.4252], // starting position [lng, lat]
+    zoom: 15 // starting zoom
+  });
+  //Convert API date/time response to JS date object
+  //....new Date(16292343 * 1000)
+
+  $.get('https://api.openweathermap.org/data/2.5/onecall', {
+    appid: WEATHER_API_TOKEN,
+    lat:35.2220,
+    lon: -101.8313,
+    units: 'imperial',
+    exclude: 'minutely,hourly'
+  }).done(function (data){
+    console.log(data);
+    console.log(data.current.clouds);
+    console.log(data.daily[0].humidity);
+
+    data.daily.forEach(function (day){
+      console.log(day.humidity)
+    })
+
+  }).fail(function (error){
+    console.log(error);
+  });
+
+</script>
+</body>
+</html>
