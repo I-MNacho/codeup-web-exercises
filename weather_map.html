@@ -16,42 +16,106 @@
 
 
 
-
 </head>
 <style>
+.container {
+  background-color: rgb(228, 251, 255);
+}
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(62, 219, 240);
+    color: whitesmoke;
+  }
   #map {
     width: 600px;
     height: 600px;
+    border: 3px solid black;
+
   }
+  .cards{
+    border: 1px solid black
+
+  }
+  ul{
+    list-style: none;
+  }
+  .card-body {
+    background-color: rgb(201, 216, 182);
+  }
+  .list-group {
+    background-color: rgb(87, 131, 123);
+  }
+
+  .sunRiseTheme {
+    background-color: rgb(241, 236, 195);
+  }
+  .sunSetTheme {
+    background-color:rgb(110, 133, 178);
+  }
+  .coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+  }
+
+
 </style>
 <!---->
 <body>
 <main class="container">
 <!--  heading part  -->
 <h1>Weather Map</h1>
-  <h3>Location</h3>
-  <h5>timeAndDate</h5>
+  <h3 id="startingLocation">location</h3>
+  <h5 id="dateTime"></h5>
+<!--adding a search button-->
+  <input id="search-bar" type="text">
+  <button id="searchLocationButton">Search location</button>
+
+
+
 
 <!--  this is the map -->
 <div id="map"></div>
-
+  <pre id="coordinates" class="coordinates"></pre>
 <!--  cards section  -->
-  <div class="card1" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+  <div class="cards" style="width: 18rem;">
+<!--    <img src="..." class="card-img-top" alt="...">-->
+
     <div class="card-body">
-      <h5 class="card-title">Day of week</h5>
+      <h5 class="card-title" id="card-title">Day of week</h5>
     </div>
+
+    <div class="cardStyle"  id="card-seperator">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Temp High</li>
-      <li class="list-group-item">Temp Low</li>
-      <li class="list-group-item">A third item</li>
+      Temp High:
+      <li class="Temp-high" id="temp-high">Temp High</li>
+      Temp Low:
+      <li class="Temp-low" id="temp-low">Temp Low</li>
+
     </ul>
-    <div class="card-body">
-<!--      <a href="#" class="card-link">Card link</a>-->
-<!--      <a href="#" class="card-link">Another link</a>-->
+  </div>
+
+    <div class="card-lower">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Sunrise</li>
-        <li class="list-group-item">Sunset</li>
+        <div class="sunRiseTheme">
+          <h5>Sunrise Time</h5>
+          <li class="sunrise" id="sunRise">Sunrise Time</li>
+        </div>
+       <div class="sunSetTheme">
+         <h5>Sunset Time</h5>
+         <li class="sunset" id="sunSet">Sunset Time</li>
+       </div>
+
       </ul>
     </div>
   </div>
@@ -67,12 +131,24 @@
   var map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v9', // style URL
-    center: [-101.8313, 35.2220], // starting position [lng, lat]
+    center: [-101.83699606188445, 35.19293183690479], // starting position [lng, lat]
     zoom: 10 // starting zoom
   });
-  //Convert API date/time response to JS date object
-  //....new Date(16292343 * 1000)
 
+//adding marker
+  const marker = new mapboxgl.Marker({draggable: true})
+          .setLngLat([-101.83699606188445, 35.19293183690479])
+          .addTo(map);
+
+  function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+  }
+
+  marker.on('dragend', onDragEnd);
+
+  //weather map
   $.get('https://api.openweathermap.org/data/2.5/onecall', {
     appid: WEATHER_API_TOKEN,
     lat:35.2220,
@@ -85,8 +161,16 @@
    var currentTemp = data.current.temp;
    var sunriseTime = (new Date((data.current.sunrise * 1000)));
    var sunsetTime = (new Date((data.current.sunset * 1000)))
+   var highTemp = data.daily[0].temp.max
+   var lowTemp = data.daily[0].temp.min
 
-
+    document.getElementById('card-title').innerText = dateTimeMonthYear
+    document.getElementById('temp-high').innerText = currentTemp
+    document.getElementById('temp-high').innerText = highTemp
+    document.getElementById('temp-low').innerText = lowTemp
+    document.getElementById('sunRise').innerText = sunriseTime
+    document.getElementById('sunSet').innerText = sunsetTime
+    document.getElementById('dateTime').innerText = dateTimeMonthYear
     // console.log('time and date log')
     // console.log(new Date((data.current.dt * 1000)));
     // console.log('temp log')
@@ -95,13 +179,41 @@
     // console.log((new Date((data.current.sunrise * 1000))));
     // console.log('sunset log')
     // console.log((new Date((data.current.sunset * 1000))));
-    data.daily.forEach(function (day){
-      // console.log(day.humidity)
-    })
+
+
 
   }).fail(function (error){
     console.log(error);
   });
+
+  var currentdate = new Date();
+  var dateTimeMonthYear =
+          + (currentdate.getMonth()+1)  + "/"
+          + currentdate.getDate() + "/"
+          + currentdate.getFullYear();
+
+
+//  search button
+//   $("#searchLocationButton").on('click', function (e){
+//     e.preventDefault();
+//     geocode($('#search-bar').val(), MAP_API_TOKEN).then(function(result){
+//       map.setCenter(result);
+//
+//
+//       $.get('https://api.openweathermap.org/data/2.5/onecall', {
+//       appid: WEATHER_API_TOKEN,
+//       lat: result[1],
+//       lon: result[0],
+//       units: 'imperial',
+//       )}.done(function (data){
+//
+//         $(".card1").html('');
+//         data.daily.forEach(function (dailyWeather){
+//           $('.card1').append()
+//         )};
+//       )};
+//     )};
+
 
 </script>
 </main>
