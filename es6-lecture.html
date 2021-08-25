@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6 lecture notes</title>
+</head>
+<body>
+<script>
+//let inside scope only will log when logged inside the scope
+//let in global scope will log if logged
+//var will try to override let if let is in global scope and var is local scope
+// var is global scope unless involved in a function
+// let name = 'nacho';
+//
+// if (true) {var name = 'jojo'
+//     console.log(name)}
+//
+// console.log(name)
+
+//Template Literals
+let name = 'Nacho';
+let job = 'programmer';
+let place = 'Texas'
+
+
+//old way we programmed
+//     console.log(name + ' is a ' + job + ' in ' + place)
+
+//Template literals
+//     console.log(`${name} is a ${job} in ${place}`)
+
+
+//Object Destructuring
+const car = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    mileage: 12657
+}
+//how we would usually declare with vanilla js
+// let make = car.make;
+// let model = car.model
+
+//ES6
+const {make, model, year, mileage} = car;
+// console.log(`I spy a ${year} ${make} ${model} with ${mileage} miles`);
+
+//CAN redeclare const if you want
+car.model = 'Tundra';
+// console.log(car.model)
+
+
+//Arrow functions
+const add = (num1, num2) => num1 + num2;
+// console.log(add(5, 5))
+
+//function expression "traditional"
+//variable declaration keyword
+//variable name
+//assignment operator
+// function keyword
+//parameters
+//code block
+//inside the code block, return statement
+var addition = function (num1, num2){
+    return num1 + num2;
+}
+
+//New function expression with arrow syntax
+// var or const or let name, parameters, arrow "function", explicit call, no return word
+const sum = (num1, num2) => num1 + num2;
+
+//IF only one parameter , we do not need (parentheses)
+const addTen = number => number + 10;
+
+//IF no parameters at all, can use empty (parentheses)
+const helloWorld = ()=> "hello world";
+// console.log(helloWorld());
+
+// if statements with arrow functions
+const doSomething = number => {
+    if (number >  100){
+    console.log("big");
+}else{
+        console.log('small')
+    }
+}
+
+//Add default values for parameters in arrow functions
+const addSomethingSpecific = (augend, addend = 25) => augend + addend;
+console.log(addSomethingSpecific(50));
+
+//you can destructure objects within the parameters
+const outputCar = ({make, model, year, mileage} = car) => console.log(`I spy a ${year} ${make} ${model} with ${mileage} miles`)
+
+//for ... of loop
+//allows you to iterate over data types thaat ae defined as iterable objects -- strings and arrays, as well as nodeLists. But not regular objects.
+//iterate over an array
+
+const instructors = ["Javier", "Justin", "Jay", "David"];
+for (const name of instructors){
+    console.log(`${name} teaches at codeup!`);
+}
+
+//Array with four elements
+//First iteration: declares const name = "javier
+//                  does console.log "Javier teaches at codeup!"
+//                  const name goes to garbage collection
+//second iteration: declares const name = "justin"....etc...
+
+
+//Iterate over a string
+for (const letter of "codeup"){
+    console.log(letter);
+    let p = document.createElement('p');  //<--- the node of p used to create object
+    document.getElementsByTagName("body")[0].append(letter, p)
+}
+
+//simple alphabetic shift cipher
+let newString = '';
+for (const letter of 'Codeup'){
+    let charCode = letter.charCodeAt(0);
+    charCode++
+    newString += String.fromCharCode(charCode)
+}
+console.log(newString)
+
+
+//Difference of for... in and for...of
+
+//for ... in -- loop over the enumerable properties of an object
+//for ... of -- loop ove the values of an iterable object
+
+for (const index in instructors){
+    console.log(index)      //<---outputs just the index location
+}
+
+for (const name of instructors){
+    console.log(name)       //
+}
+
+//To get the values in a for ... in loop
+
+for (const index in instructors){
+    console.log(`${index}: ${instructors[index]}`)
+}
+
+//typical use of for ... in: get keys and values from an objcet
+
+for (const property in car){
+    console.log(`${property}: ${car[property]}`);
+}
+
+</script>
+</body>
+</html>
