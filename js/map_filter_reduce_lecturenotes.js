@@ -44,7 +44,7 @@
 //     let total = (parseFloat(item) + parseFloat(tax)).toFixed(2);
 //     return parseFloat(total);
 // })
-//the total gets pushed into the pricesAfterTax array
+// // the total gets pushed into the pricesAfterTax array
 // let output = "";
 // pricesAfterTax.forEach((item) => output += `<p>${item}</p>`)
 // $('#output').html(output);
@@ -114,8 +114,8 @@
 //                      "car" is item in array
 //                              es6 way:
 // const under10K = cars.filter(car => car.mileage < 10000 );
-
-//                          long hand, old way
+//
+//                          // long hand, old way
 // const under10K = cars.filter(function (car){
 //     if (car.mileage < 10000){
 //         return true         //<-- if true will go into destination array
@@ -123,7 +123,7 @@
 //         return false        //<-- if false will not go into destination array
 //     }
 // })
-
+//
 // var output = "";
 // under10K.forEach(function (car){
 //     output = output + "<p>"
