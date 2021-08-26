@@ -65,33 +65,34 @@
 // pluralThings.forEach((item, index)=> index === 0 ? output += `<p>You must bring the following items:</p><p>${item}</p>` : output += `<p>${item}</p>`);
 // $("#output").html(output);
 //==============================================================================
-const cars = [
-    {
-        make: "Honda",
-        model: "Civic",
-        mileage: 10428
-    },
-    {
-        make: "Toyota",
-        model: "Corolla",
-        mileage: 9425
-    },
-    {
-        make: "Ford",
-        model: "Mustang",
-        mileage: 2567
-    },
-    {
-        make: "Audi",
-        model: "A3",
-        mileage: 14500
-    },
-    {
-        make: "Mazda",
-        model: "3",
-        mileage: 11248
-    }
-];
+// const cars = [
+//     {
+//         make: "Honda",
+//         model: "Civic",
+//         mileage: 10428
+//     },
+//     {
+//         make: "Toyota",
+//         model: "Corolla",
+//         mileage: 9425
+//     },
+//     {
+//         make: "Ford",
+//         model: "Mustang",
+//         mileage: 2567
+//     },
+//     {
+//         make: "Audi",
+//         model: "A3",
+//         mileage: 14500
+//     },
+//     {
+//         make: "Mazda",
+//         model: "3",
+//         mileage: 11248
+//     }
+// ];
+
 
 //es6 arrow notation
 // const mileages = car.map(car=>car.mileage)
@@ -112,7 +113,7 @@ const cars = [
 //==============================================================================
 //                      "car" is item in array
 //                              es6 way:
-const under10K = cars.filter(car => car.mileage < 10000 );
+// const under10K = cars.filter(car => car.mileage < 10000 );
 
 //                          long hand, old way
 // const under10K = cars.filter(function (car){
@@ -205,14 +206,69 @@ const aesopsAnimalCountedAndSorted = Object.entries
 (aesopAnimalsCounted).sort(function (a, b){return b[1]-a[1]});
 
 for (let i =0; i < aesopsAnimalCountedAndSorted.length; i++){
-    $("#output").append(aesopsAnimalCountedAndSorted[i][0] + ": " +aesopsAnimalCountedAndSorted[i][1] + "<br>" );}
-}
+    $("#output").append(
+        aesopsAnimalCountedAndSorted[i][0] + ": " +aesopsAnimalCountedAndSorted[i][1] + "<br>" );}
+
+//==============================================================================
 
 
+const cars = [
+    {
+        make: "Honda",
+        model: "Civic",
+        mileage: 10428
+    },
+    {
+        make: "Toyota",
+        model: "Corolla",
+        mileage: 9425
+    },
+    {
+        make: "Ford",
+        model: "Mustang",
+        mileage: 2567
+    },
+    {
+        make: "Audi",
+        model: "A3",
+        mileage: 14500
+    },
+    {
+        make: "Mazda",
+        model: "3",
+        mileage: 11248
+    }
+];
 
+// const mileages = cars.reduce((accumulator, car) => {
+//     accumulator.push(car.mileage);
+//     return accumulator
+// }, []);
+//
+// const highestMileage = cars.reduce((accumulator, car, index, carsArray) => {
+//     if (index === carsArray.length -1){
+//         accumulator.push(car.mileage);
+//         accumulator.sort(function (a, b){return b-a});
+//         return accumulator[0];
+//     }else{
+//         accumulator.push(car.mileage);
+//         return accumulator
+//     }
+// }, []);
 
+//another way of doing ^^^ is with a reduce within a reduce
 
-
+const highestMileage = cars.reduce((accumulator, car, index, carsArray) =>{
+    if (index === carsArray.length -1){
+        accumulator.push(car.mileage);
+        let maxMileage = accumulator.reduce((mileage1, mileage2) =>
+            Math.max(mileage1, mileage2));
+        return maxMileage;
+    }else{
+        accumulator.push(car.mileage);
+        return accumulator;
+    }
+}, []);
 
 
 
