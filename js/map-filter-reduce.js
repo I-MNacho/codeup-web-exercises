@@ -71,8 +71,8 @@ console.log(longestEmail)
 let everyonesName = users.reduce((total, users, index, array) =>{
     if (index === array.length -1){
         total.push(users.name)
-        total.sort((a,b) => b.length - a.length)
-        return total
+        // total.sort((a,b) => b.length - a.length)
+        return `Your instructors are: ${total.join(', ')}`
     }else{
         total.push(users.name)
         return total
@@ -84,7 +84,9 @@ console.log(everyonesName)
 
 
 
-
+// if(index === array.length -1){
+//     names.push(users.name)
+//     return `Your instructors are ${names.join(', ')}`
 
 
 
