@@ -5,7 +5,7 @@
 //either create a new array from the old one, OR generate a value based on the old array
 //
 // var output = "";
-// var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 
 //for each loop , looping through an array
 // prices.forEach(function (){});
@@ -37,17 +37,17 @@
 //==============================================================================
 
 
-// let pricesAfterTax = [];
-//
-// pricesAfterTax = prices.map((item) => {
-//     let tax = (item * 0.0825).toFixed(2);
-//     let total = (parseFloat(item) + parseFloat(tax)).toFixed(2);
-//     return parseFloat(total);
-// })
-// // the total gets pushed into the pricesAfterTax array
-// let output = "";
-// pricesAfterTax.forEach((item) => output += `<p>${item}</p>`)
-// $('#output').html(output);
+let pricesAfterTax = [];
+
+pricesAfterTax = prices.map((item) => {
+    let tax = (item * 0.0825).toFixed(2);
+    let total = (parseFloat(item) + parseFloat(tax)).toFixed(2);
+    return parseFloat(total);
+})
+// the total gets pushed into the pricesAfterTax array
+let output = "";
+pricesAfterTax.forEach((item) => output += `<p>${item}</p>`)
+$('#output').html(output);
 //==============================================================================
 
 // let things = ["book", "pencil", "marker", "eraser"];
@@ -113,21 +113,21 @@
 //==============================================================================
 //                      "car" is item in array
 //                              es6 way:
-// const under10K = cars.filter(car => car.mileage < 10000 );
-//
-//                          // long hand, old way
-// const under10K = cars.filter(function (car){
-//     if (car.mileage < 10000){
-//         return true         //<-- if true will go into destination array
-//     }else {
-//         return false        //<-- if false will not go into destination array
-//     }
-// })
-//
-// var output = "";
-// under10K.forEach(function (car){
-//     output = output + "<p>"
-// })
+const under10K = cars.filter(car => car.mileage < 10000 );
+
+                         // long hand, old way
+const under10K = cars.filter(function (car){
+    if (car.mileage < 10000){
+        return true         //<-- if true will go into destination array
+    }else {
+        return false        //<-- if false will not go into destination array
+    }
+})
+
+var output = "";
+under10K.forEach(function (car){
+    output = output + "<p>"
+})
 
 
 
@@ -150,35 +150,35 @@
 //.reduce()  <-- takes four parameters: total(accumalator) ,
 //==============================================================================
 //es6 way:
-// let totalCost = affordablesWithTax.reduce((total, individualItemCost) => total + individualItemCost);
+let totalCost = affordablesWithTax.reduce((total, individualItemCost) => total + individualItemCost);
 
 
-//vanilla js way:
-// var totalCost = affordablesWithTax.reduce(function (total, itemPrice){
-//     return total + itemPrice;
-// })
-//The reduce method automatically assigns the element at index 0 to the total
-// let totalCost = affordablesWithTax.reduce((total, indivItemCost, index) =>{
-//
-//     console.log(`The index is ${index}, the total is ${total}, the itemCost is ${indivItemCost}`)
-//     return total + indivItemCost;
-// });
+// vanilla js way:
+var totalCost = affordablesWithTax.reduce(function (total, itemPrice){
+    return total + itemPrice;
+})
+// The reduce method automatically assigns the element at index 0 to the total
+let totalCost = affordablesWithTax.reduce((total, indivItemCost, index) =>{
 
-// let averagePrice = affordablesWithTax.reduce((total, indivItemCost, index, array) => {
-//     total = total + indivItemCost;
-//     if (index === array.length -1){   //<--- can tell when on last iteration of array
-//         return total/array.length;
-//     }else{
-//         return total;
-//     }
-// })
+    console.log(`The index is ${index}, the total is ${total}, the itemCost is ${indivItemCost}`)
+    return total + indivItemCost;
+});
 
-//shorter way of doing above ^
-// let averagePrice = affordablesWithTax.reduce((total, indivItemCost, index, array) =>
-//     (index === array.length -1 ? (total + indivItemCost)/array.length : total + indivItemCost)
-// );
+let averagePrice = affordablesWithTax.reduce((total, indivItemCost, index, array) => {
+    total = total + indivItemCost;
+    if (index === array.length -1){   //<--- can tell when on last iteration of array
+        return total/array.length;
+    }else{
+        return total;
+    }
+})
 
-//below, is taking every item in array and adding it to the 158.76, so initial total has been altered to be 158.76 + every item in array to give sum
+shorter way of doing above ^
+let averagePrice = affordablesWithTax.reduce((total, indivItemCost, index, array) =>
+    (index === array.length -1 ? (total + indivItemCost)/array.length : total + indivItemCost)
+);
+
+// below, is taking every item in array and adding it to the 158.76, so initial total has been altered to be 158.76 + every item in array to give sum
 var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
 var total = prices.reduce(function (total, price, index){
     console.log(`The index is ${index}, the total is ${total}, the itemCost is ${price}`)

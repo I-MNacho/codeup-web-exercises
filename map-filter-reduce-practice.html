@@ -53,20 +53,41 @@
 
   // TODO 1: using map, create a new array of dog names from the dogs array
   console.log('Exercise 1:');
+    let dogNames = [];
+    dogNames = dogs.map((dog) => dog.dogName )
+  // console.log(dogNames)
 
   // TODO 2: using map, create a new array of dog ages from the dogs array
   console.log('Exercise 2:');
+      let dogAges = [];
+      dogAges = dogs.map((age) => age.age)
+  // console.log(dogAges)
 
   // TODO 3: using map, create a new array of dog objects from the dogs array that only have dog names and age properties and values
   console.log('Exercise 3:');
+      let newArray = [];
+      newArray = dogs.map((name, age) => {
+        let obj = {
+          name: name,
+          age: age
+        }
+        return obj
+      })
+  console.log(newArray)
 
   // FILTER
 
   // TODO 4: using filter, create a new array containing only dogs younger than 10 years old
   console.log('Exercise 4:');
+      let youngerThan10 = dogs.filter(dogAge => dogAge.age < 10)
+  console.log(youngerThan10)
+
 
   // TODO 5: using filter, create a new array containing only dogs named 'Lexie'
   console.log('Exercise 5:');
+
+        let justLexie = dogs.filter(lexie => lexie.dogName === 'Lexie')
+  console.log(justLexie)
 
   // TODO 6: using filter, create a new array containing only dogs that are trained and younger than 10
   console.log('Exercise 6:');
@@ -76,10 +97,17 @@
 
   // TODO 7: using reduce, return a string containing all dog names together with no spaces ("BubblesLexieDoggy...")
   console.log('Exercise 7:');
+        let allDogNames = dogs.reduce((accumulator, names) => {
+          return accumulator + names.dogName
+        }, '')
+  console.log(allDogNames)
 
   // TODO 8: using reduce, return the total of adding all dog ages together (18)
   console.log('Exercise 8:');
-
+        let totalAges = dogs.reduce((accumulator, ages) => {
+          return accumulator + ages.age
+        }, 0)
+  console.log(totalAges)
   // TODO 9: using reduce, return an array of dog objects with all isTrained properties set to true
   console.log('Exercise 9:');
 

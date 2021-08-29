@@ -111,7 +111,11 @@ console.log(uniqueUserLanguages);
 
 
 
+const numbers = [1, 2, 3, 4, 5];
 
+const sum = numbers.reduce((accumulation, currentNumber) => {
+    return accumulation + currentNumber;
+}, 0);
 
 
 
