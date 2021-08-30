@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Example</title>
+</head>
+<body>
+
+<script>
+  "use strict";
+
+  // returns a promise that resolves after two seconds if the UTC second is even and rejects if it is odd
+  // function successIfEvenUTCSecond() {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(function() {
+  //       const second = new Date().getUTCSeconds();
+  //       if (second % 2 === 0) {
+  //         resolve(second);
+  //       } else {
+  //         reject(second);
+  //       }
+  //     }, 2000);
+  //   });
+  // }
+  //
+  //   const aPromise = successIfEvenUTCSecond();
+  //
+  // aPromise.then(function (value){
+  //   console.log(`${value} is an even number!`)
+  // });
+  // aPromise.catch(function (value){
+  //   console.log(`${value} is an odd number!`)
+  // })
+
+  // TODO: if aPromise resolves, console.log 'VALUE_HERE is an even number!'
+  // TODO: if aPromise rejects, console.error 'VALUE_HERE is an odd number!'
+  //     aPromise
+  //         .then((value) => {
+  //       console.log(`${value} is an even number!`)
+  //     }).catch((value) =>{
+  //       console.log(`${value} is an odd number!`)
+  //     })
+
+  // ================================================================================================
+  //Fetch API Version....
+  //=================================================================================================
+  // make a GET request to specified URL
+//   console.log(fetch('URL'))
+//   //get the successful response and parse the stream as JSON
+//   .then(function (response){
+//     return response.json();
+//   })
+//   // take the parsed JSON and log it
+// .then(function (data){
+//   console.log(data);
+// })
+//   //If the promise rejects (wrong URL, server down, etc.) log the error
+//   .catch(function (error){
+//     console.log(error)
+//   })
+
+
+
+//=================================================================================================
+//another example
+//   fetch(URL)
+//   .then(response => response.json())
+//   .then(data =>{
+//     console.log(data);
+//   })
+//   .catch(error =>{
+//     console.log(error);
+//   })
+
+//=================================================================================================
+//Another way of JUST logging the results
+//   fetch(URL)
+//   .then(response => response.json())
+//   .then(console.log)
+//   .catch(console.error)
+
+
+//=================================================================================================
+// =================================================================================================
+// http://quotes.stormconsultancy.co.uk/api
+
+// -------- MINI EXERCISE 2
+          /* TODO: make a GET request using fetch to the Programming Quote API url and log just the text of the random quote.
+           */
+  //         const quoteUrl = `http://quotes.stormconsultancy.co.uk/random.json`;
+  //
+  // fetch(quoteUrl)
+  //         .then(response => response.json())
+  //         //.then(console.log) <-- logs the data and returns it as an Obj.
+  //         .then(function (data){
+  //           console.log(data.quote)   //<-- if you want to log JUST the quote from the Obj.
+  //         })
+  //         .catch(console.error)
+
+
+
+
+//=================================================================================================
+//This is how to make a POST request to a place called Hookbin to see what was logged or fetched
+//   fetch('URL', {
+//     method: 'POST',
+//     headers:{
+//       'Content-Type':'application/json'
+//     },
+//     body: JSON.stringify({
+//       title: 'The Matrix',
+//       rating: 5
+//     })
+//   }).then(response => response.json()).then(console.log)
+//   .catch(console.error)
+
+//=================================================================================================
+
+  // -------- MINI EXERCISE 3
+
+  /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
+      Experiment with sending different shapes of data in the body of the request.
+   */
+
+fetch('https://hookb.in/E7lRyOkJPmCVjY66j701', {
+  method: 'POST',
+  headers:{
+    'Content-Type': 'application/json'
+  },
+  body:JSON.stringify({
+    make: 'Chevy',
+    model: 'Camero',
+    year: '2020'
+  })
+}).then(response => response.json())
+  .then(console.log)
+  .catch(console.error)
+
+//=================================================================================================
+//==============  Promise Chaining
+
+  fetch('URL')
+  .then(res => res.json())
+  .then((data) => fetch(data.homeworld))    //<-- a second request was made bc the "homeworld:" value is another API
+  .then(res => res.json())
+  .then((data) => console.log(data.name))
+  .catch(console.error);
+
+
+//=================================================================================================
+//==============  Promise.all()
+  
+
+
+</script>
+</body>
+</html>
