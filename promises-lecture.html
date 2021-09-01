@@ -44,20 +44,20 @@
   // ================================================================================================
   //Fetch API Version....
   //=================================================================================================
-  // make a GET request to specified URL
-//   console.log(fetch('URL'))
-//   //get the successful response and parse the stream as JSON
-//   .then(function (response){
-//     return response.json();
-//   })
-//   // take the parsed JSON and log it
-// .then(function (data){
-//   console.log(data);
-// })
-//   //If the promise rejects (wrong URL, server down, etc.) log the error
-//   .catch(function (error){
-//     console.log(error)
-//   })
+  make a GET request to specified URL
+  console.log(fetch('URL'))
+  //get the successful response and parse the stream as JSON
+  .then(function (response){
+    return response.json();
+  })
+  // take the parsed JSON and log it
+.then(function (data){
+  console.log(data);
+})
+  //If the promise rejects (wrong URL, server down, etc.) log the error
+  .catch(function (error){
+    console.log(error)
+  })
 
 
 
@@ -87,32 +87,33 @@
 // -------- MINI EXERCISE 2
           /* TODO: make a GET request using fetch to the Programming Quote API url and log just the text of the random quote.
            */
-  //         const quoteUrl = `http://quotes.stormconsultancy.co.uk/random.json`;
-  //
-  // fetch(quoteUrl)
-  //         .then(response => response.json())
-  //         //.then(console.log) <-- logs the data and returns it as an Obj.
-  //         .then(function (data){
-  //           console.log(data.quote)   //<-- if you want to log JUST the quote from the Obj.
-  //         })
-  //         .catch(console.error)
+          const quoteUrl = `http://quotes.stormconsultancy.co.uk/random.json`;
+
+  fetch(quoteUrl)
+          .then(response => response.json())
+          //.then(console.log) <-- logs the data and returns it as an Obj.
+          .then(function (data){
+            console.log(data.quote)   //<-- if you want to log JUST the quote from the Obj.
+          })
+          .catch(console.error)
 
 
 
 
 //=================================================================================================
 //This is how to make a POST request to a place called Hookbin to see what was logged or fetched
-//   fetch('URL', {
-//     method: 'POST',
-//     headers:{
-//       'Content-Type':'application/json'
-//     },
-//     body: JSON.stringify({
-//       title: 'The Matrix',
-//       rating: 5
-//     })
-//   }).then(response => response.json()).then(console.log)
-//   .catch(console.error)
+  fetch('URL', {
+    method: 'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify({
+      title: 'The Matrix',
+      rating: 5
+    })
+  }).then(response => response.json())
+    .then(console.log)
+    .catch(console.error)
 
 //=================================================================================================
 
@@ -149,6 +150,47 @@ fetch('https://hookb.in/E7lRyOkJPmCVjY66j701', {
 
 //=================================================================================================
 //==============  Promise.all()
+//=================================================================================================
+//RESTFUL API'S
+//want to CRUD:
+
+// create users
+// read a list of users
+// update users
+// delete users
+//============== Blogging app
+//
+// posts
+// comments
+// ratings
+// tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
